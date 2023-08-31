@@ -1,0 +1,308 @@
+ol.seo {
+  counter-reset: olcounter;
+}
+
+li.seo {
+  position: relative;
+  padding-left: 50px;
+  margin: 20px 0;
+  list-style: none;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+li.seo:hover {
+  color: #FFF;
+}
+
+li.seo:before {
+  content: counter(olcounter);
+  counter-increment: olcounter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: #651413;
+  background: #fff;
+  font-weight: bold;
+  text-align: center;  
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #651413;
+}
+
+li.seo:hover:before {
+  background-color: #651413;
+  color: #FFF;
+}
+
+li.seo:last-child:after {
+  display: none;
+}
+
+li.seo:after {
+  position: absolute;
+  top: 20px;
+  left: 14px;
+  height: 100%;
+  content: '';
+  z-index: 0;
+}
+
+ol.seocircle {
+  counter-reset: olcounter;
+}
+
+li.seocircle {
+  position: relative;
+  padding-left: 50px;
+  margin: 20px 0;
+  list-style: none;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+li.seocircle:hover {
+  color: rgb(0,145,68);
+}
+
+li.seocircle:before {
+  content: counter(olcounter);
+  counter-increment: olcounter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: rgb(0,145,68);
+  background: #fff;
+  font-weight: bold;
+  text-align: center;  
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid rgb(0,145,68);
+  border-radius: 50% !important;
+}
+
+li.seocircle:hover:before {
+  background-color: rgb(0,145,68);
+  color: #000;
+}
+
+li.seocircle:last-child:after {
+  display: none;
+}
+
+li.seocircle:after {
+  position: absolute;
+  top: 20px;
+  left: 14px;
+  height: 100%;
+  content: '';
+  z-index: 0;
+}
+li.seo .dotted li:after {
+  border-left: 2px dotted #ccc;
+}
+
+li.seo .solid li:after {
+  border-left: 2px solid #ccc;
+}
+
+li.seo .circle li:before {
+  border-radius: 50% !important;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.time {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.time::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media all and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .time {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .time::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+.fab {
+  width: 50px;
+  height: 40px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+  opacity: .8;
+  transition: all .2s ease;
+}
+.fab:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.custom-color {
+  color: #fff;
+  background: rgb(0,145,68);
+}
+
+.button {
+  position: relative;
+  height: 36px;
+  line-height: 45px;
+  border-radius: 5px;
+  box-shadow: 0 5px rgb(0,145,68);
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.button:hover {
+  box-shadow: 0 3px rgb(0,145,68);
+  top: 6px;
+}
+
+.flat-3d {
+  overflow: hidden;
+  text-shadow: 1px 1px 0 rgb(0,145,68),
+2px 2px 0 rgb(0,145,68), 
+3px 3px 0 rgb(0,145,68),
+4px 4px 0 rgb(0,145,68),
+5px 5px 0 rgb(0,145,68), 
+6px 6px 0 rgb(0,145,68), 
+7px 7px 0 rgb(0,145,68),
+8px 8px 0 rgb(0,145,68),
+9px 9px 0 rgb(0,145,68),
+10px 10px 0 rgb(0,145,68), 
+11px 11px 0 rgb(0,145,68),
+12px 12px 0 rgb(0,145,68),
+13px 13px 0 rgb(0,145,68), 
+14px 14px 0 rgb(0,145,68), 
+15px 15px 0 rgb(0,145,68),
+16px 16px 0 rgb(0,145,68),
+17px 17px 0 rgb(0,145,68),
+18px 18px 0 rgb(0,145,68),
+19px 19px 0 rgb(0,145,68),
+20px 20px 0 rgb(0,145,68),
+21px 21px 0 rgb(0,145,68),
+22px 22px 0 rgb(0,145,68),
+23px 23px 0 rgb(0,145,68), 
+24px 24px 0 rgb(0,145,68), 
+25px 25px 0 rgb(0,145,68);
+}

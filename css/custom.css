@@ -1,0 +1,8 @@
+.team-member-img {
+  transition-duration: 0.15s;
+  background-color: #fefefe;
+}
+
+.team-member:hover .team-member-img {
+  padding: 10px !important;
+}

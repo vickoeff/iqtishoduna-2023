@@ -1,0 +1,74 @@
+.parent {
+    width: 30%;
+    margin: 10px;
+    height: 275px;
+    overflow: hidden;
+    position: relative;
+    float: top;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.child {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/* Several different images */
+.bg-one-scfp {background-image: url(../images/gallery/scfp/5.JPG);}
+.bg-two-scfp {background-image: url(../images/gallery/scfp/6.JPG);}
+.bg-three-scfp {background-image: url(../images/gallery/scfp/7.JPG);}
+.bg-four-scfp {background-image: url(../images/gallery/scfp/8.JPG);}
+.bg-five-scfp {background-image: url(../images/gallery/scfp/9.JPG);}
+.bg-six-scfp {background-image: url(../images/gallery/scfp/10.JPG);}
+
+.bg-one-seo {background-image: url(../images/gallery/seo/1.jpg);}
+.bg-two-seo {background-image: url(../images/gallery/seo/2.jpg);}
+.bg-three-seo {background-image: url(../images/gallery/seo/3.jpg);}
+.bg-four-seo {background-image: url(../images/gallery/seo/4.png);}
+.bg-five-seo {background-image: url(../images/gallery/seo/5.png);}
+.bg-six-seo {background-image: url(../images/gallery/seo/6.png);}
+.bg-seven-seo {background-image: url(../images/gallery/seo/7.png);}
+.bg-eight-seo {background-image: url(../images/gallery/seo/8.png);}
+.bg-nine-seo {background-image: url(../images/gallery/seo/9.png);}
+
+
+.parent:hover .child, .parent:focus .child {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.parent:hover .child:before, .parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover a, .parent:focus a {
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(140, 140, 140,0.5);
+}
+
+/* Media Queries */
+@media screen and (max-width: 960px) {
+    .parent {width: 100%; margin: 20px 0px}
+        .wrapper {padding: 20px 20px;}
+}
